@@ -8,9 +8,6 @@
 definePageMeta({
     layout: 'common'
 })
-
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

@@ -5,9 +5,7 @@
 </template>
 
 <script setup>
-    const blogTitle = useRoute().params;
+const blogTitle = useRoute().params;
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

@@ -1,12 +1,12 @@
 <template>
-  <div>
-    <BlogPage></BlogPage>
-  </div>
+    <div>
+        <BlogPage></BlogPage>
+    </div>
 </template>
 
 <script setup>
 definePageMeta({
-  layout: "common"
+    layout: "common"
 });
 </script>
 

@@ -6,9 +6,8 @@
 
 <script setup>
 definePageMeta({
-    layout: 'common'
-})
-
+    layout: "common"
+});
 </script>
 
 <style scoped></style>
