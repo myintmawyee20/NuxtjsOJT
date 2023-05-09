@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply bg-gray-50;
+}
+
+@layer components{
+    .btn{
+        @apply bg-[#12b488] text-white px-3 py-2 rounded-md text-sm;
+    }
+    .c_content {
+        @apply text-center font-bold m-5 text-3xl text-blue-500;
+    }
+    .c_blog {
+        @apply bg-slate-500 text-center rounded-sm pt-20 h-48;
+    }
+}
