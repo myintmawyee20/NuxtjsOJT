@@ -14,6 +14,9 @@
                     <li>
                         <NuxtLink to="/travel" class="text-blue-400">Travel Page</NuxtLink>
                     </li>
+                    <li>
+                        <NuxtLink to="/" class="text-gray-400" @click.prevent="logout">Logout</NuxtLink>
+                    </li>
                 </ul>
             </nav>
         </header>
@@ -28,7 +31,13 @@
     </div>
 </template>
 
-<script setup></script>
+<script setup>
+const isLogin = useCookie('auth');
+
+function logout(){
+    isLogin.value = false;
+}
+</script>
 
 <style scoped>
 .router-link-exact-active {
