@@ -11,6 +11,9 @@
                     <li>
                         <NuxtLink to="/blog" class="text-blue-400">Blog Page</NuxtLink>
                     </li>
+                    <li>
+                        <NuxtLink to="/travel" class="text-blue-400">Travel Page</NuxtLink>
+                    </li>
                 </ul>
             </nav>
         </header>
