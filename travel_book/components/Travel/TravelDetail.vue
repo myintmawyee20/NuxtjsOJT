@@ -15,10 +15,7 @@
 
 <script setup>
 const id = useRoute().params;
-const { data: travelList } = await useFetch("/api/travel");
-const travelDetail = travelList.value.filter((detail) => {
-    return detail.id == id.id;
-});
+const { data: travelDetail } = await useFetch(`/api/travel/${id.id}`);
 </script>
 
 <style scoped></style>

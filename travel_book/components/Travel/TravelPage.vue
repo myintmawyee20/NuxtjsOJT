@@ -18,7 +18,7 @@
 </template>
 
 <script setup>
-const { data: travelList } = await useFetch("/api/travel");
+const { data: travelList } = await useFetch("/api/travel/list");
 </script>
 
 <style scoped>
