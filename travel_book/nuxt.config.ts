@@ -4,6 +4,11 @@ export default defineNuxtConfig({
     app: {
         head: {
             title: 'Nuxt 3 OJT',
+            link: [
+                {
+                    rel: 'stylesheet' , href: 'https://fonts.googleapis.com/icon?family=Material+Icons'
+                }
+            ]
         }
     }
 })

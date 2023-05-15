@@ -1,7 +1,7 @@
 <template>
     <div>
         <!-- part of header -->
-        <header class="shadow-sm bg-white">
+        <header class="shadow-sm bg-white sticky">
             <nav class="container mx-auto p-4 flex justify-between">
                 <NuxtLink class="font-bold text-xl text-blue-400" to="/home">Nuxt OJT</NuxtLink>
                 <ul class="flex gap-4">
@@ -13,6 +13,9 @@
                     </li>
                     <li>
                         <NuxtLink to="/travel" class="text-blue-400">Travel Page</NuxtLink>
+                    </li>
+                    <li>
+                        <NuxtLink to="/books" class="text-blue-400">Books Page</NuxtLink>
                     </li>
                     <li>
                         <NuxtLink to="/" class="text-gray-400" @click.prevent="logout">Logout</NuxtLink>
