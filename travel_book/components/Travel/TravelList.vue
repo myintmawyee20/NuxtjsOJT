@@ -2,14 +2,14 @@
     <div>
         <h2 class="c_content">This is Travel Page (Static Page)</h2>
         <div class="grid grid-cols-3 gap-10 mb-5">
-            <div class="card text-center" v-for="travel in travelList" :key="travel.id">
-                <h2 class="font-bold text-gray-500 m-4 truncate text-2xl">
+            <div class="text-center card" v-for="travel in travelList" :key="travel.id">
+                <h2 class="m-4 text-2xl font-bold text-gray-500 truncate">
                     {{ travel.title }}
                 </h2>
-                <img :src="travel.image" alt="product thumb" class="thumb" />
+                <img :src="`/_nuxt/assets/images/${travel.image}`" alt="product thumb" class="thumb" />
                 <NuxtLink :to="`/travel/${travel.id}`">
                     <div class="view">
-                        <p class="btn my-4">View Detail</p>
+                        <p class="my-4 btn">View Detail</p>
                     </div>
                 </NuxtLink>
             </div>
@@ -24,7 +24,7 @@ const { data: travelList } = await useFetch("/api/travel/list");
 <style scoped>
 .thumb {
     max-height: 150px;
-    max-width: 80%;
+    max-width: 100%;
     margin: 0 auto;
 }
 
