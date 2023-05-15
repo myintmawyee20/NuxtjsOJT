@@ -1,14 +1,9 @@
 <template>
-    <div class="card">
-        <div class="grid grid-cols-2 gap-10" v-for="detail in travelDetail" :key="detail.id">
-            <div class="p-7">
-                <img :src="detail.image" alt="travel img" class="mx-auto my-7" />
-            </div>
-            <div class="p-7">
-                <h2 class="text-4xl my-7">{{ detail.title }}</h2>
-                <h3 class="font-bold border-b-2 mb-4 pb-2">Travel Description:</h3>
-                <p class="mb-7">{{ detail.description }}</p>
-            </div>
+    <div class="flex justify-center">
+        <div class="w-1/3 ">
+            <h2 class="text-4xl text-center my-7">{{ travelDetail.title }}</h2>
+            <img :src="`/_nuxt/assets/images/${travelDetail.image}`" alt="travel img" class="mx-auto my-7" />
+            <p class="text-justify mb-7">{{ travelDetail.description }}</p>
         </div>
     </div>
 </template>
