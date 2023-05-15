@@ -1,6 +1,6 @@
 <template>
     <div>
-        <TravelPage></TravelPage>
+        <TravelList></TravelList>
     </div>
 </template>
 
