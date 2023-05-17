@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2 class="c_content">This is Dynamic Page - {{ blogTitle.title }}</h2>
+        <AtomsAtomHeading :heading="'c_content'" :text="`This is Dynamic Page - ${ blogTitle.title }`"></AtomsAtomHeading>
     </div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <HomePage></HomePage>
+        <AtomsAtomHeading :text="'This is Home Page (Static Page)'" :heading="'c_content'"></AtomsAtomHeading>
     </div>
 </template>
 

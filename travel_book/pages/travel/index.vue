@@ -1,6 +1,6 @@
 <template>
     <div>
-        <TravelList></TravelList>
+        <MoleculesTravelList></MoleculesTravelList>
     </div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <BookCreate></BookCreate>
+        <OrganismsBookCreate></OrganismsBookCreate>
     </div>
 </template>
 

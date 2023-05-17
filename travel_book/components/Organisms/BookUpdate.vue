@@ -2,29 +2,21 @@
     <div>
         <VForm @submit="editBook" class="w-auto m-10" :validation-schema="schema">
             <div class="mb-6">
-                <label for="base-input" class="form-label">Book Name</label>
-                <VField type="text" name="title" id="base-input" class="form-control" v-model="bookName" />
-                <VErrorMessage name="title" class="text-red-500 " />
+                <MoleculesControlBookName @bookName="handleBookName" :title="bookName"></MoleculesControlBookName>
             </div>
             <div class="mb-6">
-                <label for="base-input" class="form-label">Author</label>
-                <VField type="text" name="author" id="base-input" class="form-control" v-model="author" />
-                <VErrorMessage name="author" class="text-red-500 " />
+                <MoleculesControlAuthor @author="handleAuthor" :author="author"></MoleculesControlAuthor>
             </div>
             <div class="mb-6">
-                <label for="base-input" class="form-label">Price</label>
-                <VField type="number" name="price" id="base-input" class="form-control" v-model="price" />
-                <VErrorMessage name="price" class="text-red-500 " />
+                <MoleculesControlPrice @price="handlePrice" :price="price"></MoleculesControlPrice>
             </div>
             <div class="mb-6">
-                <label for="base-input" class="form-label">Date</label>
-                <VField type="date" name="date" id="base-input" class="form-control" v-model="date" />
-                <VErrorMessage name="date" class="text-red-500 " />
+                <MoleculesControlDate @date="handleDate" :date="date"></MoleculesControlDate>
             </div>
             <div class="flex justify-center mb-6">
-                <button class="mr-5 btn" type="submit">Update</button>
+                <AtomsAtomButton :button="'mr-5 btn'" :type="'submit'" :text="'Update'"></AtomsAtomButton>
                 <NuxtLink to="/books">
-                    <button class="btn">Cancel</button>
+                    <AtomsAtomButton :button="'btn'" :text="'Cancel'"></AtomsAtomButton>
                 </NuxtLink>
             </div>
         </VForm>
@@ -41,18 +33,32 @@ const date = ref("");
 const id = useRoute().params;
 const router = useRouter();
 
+
 const { data: bookDetail } = await useFetch(`/api/book/${id.update}`);
 bookName.value = bookDetail.value.title;
 author.value = bookDetail.value.author;
 price.value = bookDetail.value.price;
 date.value = bookDetail.value.date;
 
-if(!bookDetail.value){
-  throw createError({statusCode: 404, statusMessage: 'Book not fount', fatal: true})
+
+function handleBookName(value) {
+    bookName.value = value;
+}
+
+function handleAuthor(value) {
+    author.value = value;
+}
+
+function handlePrice(value) {
+    price.value = value;
+}
+
+function handleDate(value) {
+    date.value = value;
 }
 
 const schema = yup.object({
-    title: yup.string().required('စာအုပ်အမည် ဖြည့်ရန် လိုအပ်သည်*'),
+    bookName: yup.string().required('စာအုပ်အမည် ဖြည့်ရန် လိုအပ်သည်*'),
     author: yup.string().required('စာရေးဆရာအမည် ဖြည့်ရန် လိုအပ်သည်*'),
     price: yup.string().required('စျေးနှုန်း ဖြည့်ရန် လိုအပ်သည်*'),
     date: yup.string().required('ထုတ်ဝေခဲ့သောရက်စွဲ ဖြည့်ရန် လိုအပ်သည်*'),
@@ -62,7 +68,7 @@ async function editBook() {
     await $fetch("/api/book/edit", {
         method: "PATCH",
         body: JSON.stringify({
-            id : id.update,
+            id: id.update,
             title: bookName.value,
             author: author.value,
             price: price.value,

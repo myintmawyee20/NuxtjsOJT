@@ -1,6 +1,6 @@
 <template>
     <div>
-        <LoginPage></LoginPage>
+        <OrganismsLoginPage></OrganismsLoginPage>
     </div>
 </template>
 

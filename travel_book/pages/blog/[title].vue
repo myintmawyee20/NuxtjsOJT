@@ -1,6 +1,6 @@
 <template>
     <div>
-        <BlogDetail></BlogDetail>
+        <MoleculesBlogDetail></MoleculesBlogDetail>
     </div>
 </template>
 

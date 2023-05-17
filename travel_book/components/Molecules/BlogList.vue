@@ -1,10 +1,10 @@
 <template>
     <div>
-        <h2 class="c_content">This is Blog Page (Dynamic Page)</h2>
+        <AtomsAtomHeading :text="'This is Blog Page (Dynamic Page)'" :heading="'c_content'"></AtomsAtomHeading>
         <div class="grid grid-cols-3 gap-5">
             <div v-for="(blog) in blogs" :key="blog.id">
                 <NuxtLink :to="`/blog/${blog.title}`">
-                    <p class="c_blog">{{ blog.title }}</p>
+                    <AtomsAtomHeading :heading="'c_blog'" :text="`${blog.title}`"></AtomsAtomHeading>
                 </NuxtLink>
             </div>
         </div>
