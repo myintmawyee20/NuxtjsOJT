@@ -9,7 +9,13 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.6.7",
     "@types/node": "^18",
     "nuxt": "^3.4.3"
+  },
+  "dependencies": {
+    "@vee-validate/rules": "^4.9.3",
+    "vee-validate": "^4.9.3",
+    "yup": "^1.1.1"
   }
 }
