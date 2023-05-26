@@ -11,5 +11,10 @@
   "devDependencies": {
     "@types/node": "^18",
     "nuxt": "^3.4.3"
+  },
+  "dependencies": {
+    "chart.js": "^4.3.0",
+    "typescript": "^5.0.4",
+    "vue-chartjs": "^5.2.0"
   }
 }
