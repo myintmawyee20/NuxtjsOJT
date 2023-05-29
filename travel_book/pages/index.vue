@@ -1,6 +1,8 @@
 <template>
     <div class="container w-75 vh-100">
-        <OrganismsOrganismPost></OrganismsOrganismPost>
+        <ClientOnly>
+            <OrganismsOrganismPost></OrganismsOrganismPost>
+        </ClientOnly>
     </div>
 </template>
 

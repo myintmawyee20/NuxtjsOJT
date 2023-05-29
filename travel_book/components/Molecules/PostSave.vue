@@ -1,31 +1,31 @@
 <template>
     <div class="my-3">
-        <VForm @submit.prevent="savePost" class="w-auto m-10" :validation-schema="schema">
+        <VForm @submit="savePost" class="w-auto m-10" :validation-schema="schema">
             <div class="form-check form-switch container my-3">
-                <AtomsAtomCheckBox :inputField="'form-check-input'" :type="'checkbox'" :id="'flexSwitchCheckChecked'"
+                <AtomsCheckBox :inputField="'form-check-input'" :type="'checkbox'" :id="'flexSwitchCheckChecked'"
                     v-model="is_published" @change="handleChange" :checked="is_published" />
-                <AtomsAtomLabel :checkDesign="'form-check-label'" :checkLabel="'flexSwitchCheckChecked'"
-                    :text="'Publish or draft'"></AtomsAtomLabel>
+                <AtomsLabel :checkDesign="'form-check-label'" :checkLabel="'flexSwitchCheckChecked'"
+                    :text="'Publish or draft'"></AtomsLabel>
             </div>
             <div class="w-100 mt-3">
                 <div class="mb-3">
-                    <AtomsAtomInputField :title="'title'" :inputField="'form-control'" :type="'text'"
+                    <AtomsInputField :title="'title'" :inputField="'form-control'" :type="'text'"
                         :placeholder="'Enter Post Title...'" v-model="title" :value="title"
                         @input="postName($event.target.value)">
-                    </AtomsAtomInputField>
-                    <AtomsAtomErrorMessage :message="{ name: 'title', class: 'text-danger' }"></AtomsAtomErrorMessage>
+                    </AtomsInputField>
+                    <AtomsErrorMessage :message="{ name: 'title', class: 'text-danger' }"></AtomsErrorMessage>
                 </div>
 
-                <AtomsAtomTextArea :description="'description'" :areaDesign="'form-control'" v-model="description"
+                <AtomsTextArea :description="'description'" :areaDesign="'form-control'" v-model="description"
                     :placeholder="'Leave a post description here'" :style="'height: 200px'"
-                    @input="postDescription($event.target.value)"></AtomsAtomTextArea>
-                <AtomsAtomErrorMessage :message="{ name: 'description', class: 'text-danger' }"></AtomsAtomErrorMessage>
+                    @input="postDescription($event.target.value)"></AtomsTextArea>
+                <AtomsErrorMessage :message="{ name: 'description', class: 'text-danger' }"></AtomsErrorMessage>
             </div>
             <div class="d-flex justify-content-center mt-3">
-                <AtomsAtomButton :button="'me-3 btn btn-success'" :type="'submit'" :text="props.postId ? 'Edit' : 'Create'">
-                </AtomsAtomButton>
-                <AtomsAtomButton :button="'btn btn-secondary'" :type="'button'" :text="'Cancel'" @click="handleReset">
-                </AtomsAtomButton>
+                <AtomsButton :button="'me-3 btn btn-success'" :type="'submit'" :text="props.postId ? 'Edit' : 'Create'">
+                </AtomsButton>
+                <AtomsButton :button="'btn btn-secondary'" :type="'button'" :text="'Cancel'" @click="handleReset">
+                </AtomsButton>
             </div>
         </VForm>
     </div>

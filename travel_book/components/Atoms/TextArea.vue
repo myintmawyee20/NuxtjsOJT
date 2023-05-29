@@ -3,7 +3,12 @@
 </template>
 
 <script setup lang="ts">
-defineProps(['areaDesign', 'placeholder', 'style', 'description'])
+defineProps({
+    areaDesign: String ,
+    placeholder: String ,
+    style : String ,
+    description: String ,
+});
 </script>
 
 <style scoped>

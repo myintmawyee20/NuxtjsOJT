@@ -1,19 +1,30 @@
 <template>
     <div class="container my-3">
-        <AtomsAtomButton @click.prevent="$emit('newPost')" :text="'New Post'" :type="'button'" :button="'btn btn-success w-100'">
-        </AtomsAtomButton>
-        <AtomsAtomInputField :inputField="'form-control my-3'" :type="'text'" :placeholder="'Search...'"
+        <div class="row mb-3">
+            <NuxtLink to="/charts/weekly" class="col col-4">
+                <AtomsButton :text="'Weekly Post Created'" :type="'button'" :button="'btn btn-sm btn-success'"></AtomsButton>
+            </NuxtLink>
+            <NuxtLink to="/charts/monthly" class="col col-4">
+                <AtomsButton :text="'Monthly Post Created'" :type="'button'" :button="'btn btn-sm btn-success'"></AtomsButton>
+            </NuxtLink>
+            <NuxtLink to="/charts/yearly" class="col col-4">
+                <AtomsButton :text="'Yearly Post Created'" :type="'button'" :button="'btn btn-sm btn-success'"></AtomsButton>
+            </NuxtLink>
+        </div>
+        <AtomsButton @click="$emit('newPost')" :text="'New Post'" :type="'button'" :button="'btn btn-success w-100'">
+        </AtomsButton>
+        <AtomsInputField :inputField="'form-control my-3'" :type="'text'" :placeholder="'Search...'"
             v-bind:value="searchTitle" v-on:input="searchTitle = $event.target.value">
-        </AtomsAtomInputField>
+        </AtomsInputField>
         <div class="cursor-pointer">
             <div class="card border-dark mb-3" style="max-width: 100%" v-for="post in getLists" :key="post.id"
                 @click="$emit('showDetail', post.id)">
                 <h6><span :class="post.is_published  ? 'badge bg-success': 'badge bg-danger'">{{post.is_published  ? 'Publish': 'Draft'}}</span></h6>
-                <AtomsAtomText :textDesign="'h4 one-line-sentence border-bottom px-2'" :text="post.title">
-                </AtomsAtomText>
+                <AtomsText :textDesign="'h4 one-line-sentence border-bottom px-2'" :text="post.title">
+                </AtomsText>
                 <div class="px-2">
-                    <AtomsAtomText :textDesign="'two-line-sentence'" :text="post.description">
-                    </AtomsAtomText>
+                    <AtomsText :textDesign="'two-line-sentence'" :text="post.description">
+                    </AtomsText>
                 </div>
             </div>
             <InfiniteLoading @infinite="infiniteLoad" />

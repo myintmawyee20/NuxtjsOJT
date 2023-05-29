@@ -1,12 +1,12 @@
 <template>
     <div class="container my-3" v-if="Object.keys(postDetail).length > 0">
         <div class="d-flex justify-content-between">
-            <AtomsAtomText :textDesign="'h3'" :text="postDetail.title"></AtomsAtomText>
-            <AtomsAtomIcons :iconDesign="'material-icons display-6 cursor-pointer'" :text="'edit'"
-                @click.prevent="$emit('handleEdit', postDetail.id)"></AtomsAtomIcons>
+            <AtomsText :textDesign="'h3'" :text="postDetail.title"></AtomsText>
+            <AtomsIcons :iconDesign="'material-icons display-6 cursor-pointer'" :text="'edit'"
+                @click="$emit('handleEdit', postDetail.id)"></AtomsIcons>
         </div>
-        <AtomsAtomText :textDesign="'text-justify mt-3'" :text="postDetail.description">
-        </AtomsAtomText>
+        <AtomsText :textDesign="'text-justify mt-3'" :text="postDetail.description">
+        </AtomsText>
     </div>
 </template>
 
